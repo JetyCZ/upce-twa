@@ -10,10 +10,29 @@ import org.openqa.selenium.opera.OperaDriver;
 public class WebDriverHelper {
 
     public static WebDriver getWebDriver() {
-        // WebDriverManager instance = WebDriverManager.getInstance(ChromeDriver.class);
+        WebDriver driver = null;
+
+        // driver = setupChrome();
+        driver = setupFirefox();
+
+        return driver;
+
+    }
+
+    protected static WebDriver setupFirefox() {
+        WebDriver driver;
+        System.setProperty("webdriver.firefox.bin", "/usr/bin/firefox54");
         WebDriverManager instance = WebDriverManager.getInstance(OperaDriver.class);
         instance.setup();
-        return new OperaDriver();
+        driver = new FirefoxDriver();
+        return driver;
+    }
 
+    protected static WebDriver setupChrome() {
+        WebDriver driver;
+        WebDriverManager instance = WebDriverManager.getInstance(ChromeDriver.class);
+        instance.setup();
+        driver = new ChromeDriver();
+        return driver;
     }
 }
