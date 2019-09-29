@@ -1,6 +1,6 @@
-package cz.digitalcz.stormont.system.test;
+package net.jetensky.upce.twa;
 
-import cz.digitalcz.stormont.system.test.helper.SmartDriver;
+import net.jetensky.upce.twa.helper.SmartDriver;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;

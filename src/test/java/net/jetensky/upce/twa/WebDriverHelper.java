@@ -1,4 +1,4 @@
-package cz.digitalcz.stormont.system.test;
+package net.jetensky.upce.twa;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 import io.github.bonigarcia.wdm.WebDriverManager;

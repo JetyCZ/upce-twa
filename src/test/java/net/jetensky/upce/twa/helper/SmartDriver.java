@@ -1,4 +1,4 @@
-package cz.digitalcz.stormont.system.test.helper;
+package net.jetensky.upce.twa.helper;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;

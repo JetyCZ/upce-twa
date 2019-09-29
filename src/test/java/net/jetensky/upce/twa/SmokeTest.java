@@ -1,4 +1,4 @@
-package cz.digitalcz.stormont.system.test;
+package net.jetensky.upce.twa;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
