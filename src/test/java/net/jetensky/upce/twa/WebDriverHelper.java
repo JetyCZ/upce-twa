@@ -1,19 +1,20 @@
 package net.jetensky.upce.twa;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class WebDriverHelper {
 
     public static WebDriver getWebDriver() {
         WebDriver driver = null;
 
-        // driver = setupChrome();
-        driver = setupFirefox();
+        // driver = setupChrome(ChromeDriver.class);
+        driver = setupRemoteWebDriver(OperaDriver.class);
+        //driver = setupFirefox();
 
         return driver;
 
@@ -28,11 +29,15 @@ public class WebDriverHelper {
         return driver;
     }
 
-    protected static WebDriver setupChrome() {
-        WebDriver driver;
-        WebDriverManager instance = WebDriverManager.getInstance(ChromeDriver.class);
+    protected static RemoteWebDriver setupRemoteWebDriver(Class driverClass) {
+        RemoteWebDriver driver;
+        WebDriverManager instance = WebDriverManager.getInstance(driverClass);
         instance.setup();
-        driver = new ChromeDriver();
+        try {
+            driver = (RemoteWebDriver) driverClass.newInstance();
+        } catch (Exception e) {
+            throw new IllegalStateException(e);
+        }
         return driver;
     }
 }
