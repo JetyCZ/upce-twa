@@ -12,8 +12,8 @@ public class WebDriverHelper {
     public static WebDriver getWebDriver() {
         WebDriver driver = null;
 
-        // driver = setupChrome(ChromeDriver.class);
         driver = setupRemoteWebDriver(OperaDriver.class);
+        // driver = setupRemoteWebDriver(ChromeDriver.class);
         //driver = setupFirefox();
 
         return driver;

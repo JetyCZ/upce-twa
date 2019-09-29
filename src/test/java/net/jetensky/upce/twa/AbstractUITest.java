@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class AbstractUITest {
+public abstract class AbstractUITest {
     protected static WebDriver webDriver;
     protected static SmartDriver driver;
 

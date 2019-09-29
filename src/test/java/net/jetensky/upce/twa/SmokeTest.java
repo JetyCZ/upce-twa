@@ -14,8 +14,8 @@ public class SmokeTest extends AbstractUITest{
     public void googleHello() throws InterruptedException {
         driver.get("http://www.google.com");
         driver.write(By.name("q"), "Univerzita Pardubice");
-        By btnK = By.name("btnK");
 
+        By btnK = By.name("btnK");
         ExpectedCondition<WebElement> elementCondition = d -> d.findElement(btnK);
         WebElement element = (new WebDriverWait(webDriver, 10)).until(elementCondition);
 
