@@ -9,11 +9,11 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class WebDriverHelper {
 
-    public static WebDriver getWebDriver() {
-        WebDriver driver = null;
 
-        driver = setupRemoteWebDriver(OperaDriver.class);
-        // driver = setupRemoteWebDriver(ChromeDriver.class);
+    public static WebDriver getWebDriver() {
+        WebDriver driver;
+        // driver = setupRemoteWebDriver(OperaDriver.class);
+        driver = setupRemoteWebDriver(ChromeDriver.class);
         //driver = setupFirefox();
 
         return driver;
@@ -29,7 +29,7 @@ public class WebDriverHelper {
         return driver;
     }
 
-    protected static RemoteWebDriver setupRemoteWebDriver(Class driverClass) {
+    private static RemoteWebDriver setupRemoteWebDriver(Class driverClass) {
         RemoteWebDriver driver;
         WebDriverManager instance = WebDriverManager.getInstance(driverClass);
         instance.setup();
