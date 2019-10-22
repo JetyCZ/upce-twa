@@ -10,5 +10,10 @@ public class SeleniumTestExecutionListener extends AbstractTestExecutionListener
  public void beforeTestMethod(TestContext testContext) throws Exception {
   testContext.getApplicationContext().getBean(TestScope.class).reset();
  }
+
+ @Override
+ public void afterTestMethod(TestContext testContext) throws Exception {
+  testContext.getApplicationContext().getBean(WebDriver.class).quit();
+ }
  
 }
