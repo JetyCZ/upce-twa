@@ -16,21 +16,6 @@ import java.util.Map;
 public class SeleniumTestCaseContext {
 
  @Bean
- public TestScope testScope() {
-  return new TestScope();
- }
-
- @Bean
- public CustomScopeConfigurer customScopeConfigurer() {
-  CustomScopeConfigurer scopeConfigurer = new CustomScopeConfigurer();
-  Map<String, Object> scopes = new HashMap<>();
-  scopes.put("test", testScope());
-  scopeConfigurer.setScopes(scopes);
-  return scopeConfigurer;
- }
-
- @Bean
- @Scope("test")
  public WebDriver webDriver() {
   return WebDriverHelper.getWebDriver();
  }
